@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+ <struts>
+     <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="myMessage"></constant>
+ 	<package namespace="/" name="struts2" extends="struts-default">
+ 		
+	</package>
+	
+	<package name="emplyeebase" namespace="/" extends="struts2">
+		<action name="addEmployee" method="forward" class="employeeAction">
+			<result name="success">/page/employee/addEmployee.jsp</result>
+		</action>
+		<action name="saveEmployee" method="addEmployee" class="employeeAction">
+			<result name="success" type="redirect">/viewEmployee?id=${id}</result>
+		</action>
+		<action name="viewEmployee" method="viewEmployee" class="employeeAction">
+			<result name="success">/page/employee/employee.jsp</result>
+		</action>
+		<action name="listEmployee" method="listEmployee" class="employeeAction">
+			<result name="success">/page/employee/listEmployee.jsp</result>
+		</action>
+		<action name="employeeDownlowd" method="employeeDownload" class="employeeAction">
+			<result name="success" type="stream">
+				<param name="contentType">text/plain</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename="${downLoadfileName}"</param>
+        		<param name="bufferSize">4096</param>  
+			</result>
+		</action>
+	</package>
+	<package name="project" namespace="/" extends="struts2">
+		<action name="addProject" method="forward" class="projectAction">
+			<result name="success">/page/project/addProject.jsp</result>
+		</action>
+		<action name="saveProject" method="addProject" class="projectAction">
+			<result name="success" type="redirect">/viewProject?id=${id}</result>
+		</action>
+		<action name="viewProject" method="viewProject" class="projectAction">
+			<result name="success">/page/project/project.jsp</result>
+		</action>
+		<action name="listProject" method="listProject" class="projectAction">
+			<result name="success">/page/project/listProject.jsp</result>
+		</action>
+	</package>
+	<package name="job" namespace="/" extends="struts2">
+		<action name="addJob" method="forward" class="jobAction">
+			<result name="success">/page/job/addJob.jsp</result>
+		</action>
+		<action name="viewJob" method="viewJob" class="jobAction">
+			<result name="success">/page/job/job.jsp</result>
+		</action>
+		<action name="listJob" method="listJob" class="jobAction">
+			<result name="success">
+				/page/job/listJob.jsp
+			</result>
+		</action>
+		<action name="gridJob" method="gridJob" class="jobAction">
+			<result name="success">
+				/page/job/gridJob.jsp
+			</result>
+		</action>
+		<action name="viewGridJob" method="viewGridJob" class="jobAction">
+			<result name="success">
+				/page/job/viewGridJob.jsp
+			</result>
+		</action>
+	</package>
+	<package name="job-json" namespace="/job" extends="json-default">
+		<action name="saveJob" method="addJob" class="jobAction">
+			<result type="json">  
+                <param name="root">json</param>  
+            </result>
+		</action>
+		<action name="addJobs" method="addJobs" class="jobAction">
+			<result type="json">  
+                <param name="root">json</param>  
+            </result>
+		</action>
+		<action name="removeJob" method="removeJob" class="jobAction">
+			<result type="json">  
+                <param name="root">json</param>  
+            </result>
+		</action>
+	</package>
+	<package name="employee-json" namespace="/employee" extends="json-default">
+		<action name="changeTime" method="changeTime" class="employeeAction">
+			<result type="json">  
+                <param name="root">json</param>  
+            </result>
+		</action>
+	</package>
+</struts>

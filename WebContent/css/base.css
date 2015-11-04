@@ -1,0 +1,92 @@
+body{
+  padding: 80px 0 0 0;
+}
+
+.lt{
+  float: left;
+}
+
+.rt{
+  float: right;
+}
+
+.mgt50{
+  margin-top: 50px;
+}
+
+.mgl5{
+  margin-left: 5px;
+}
+
+.mgl20{
+  margin-left: 20px;
+}
+
+.mgb0{
+  margin-bottom: 0;
+}
+
+.mgb10{
+  margin-bottom: 10px;
+}
+
+.mgr10{
+  margin-right: 10px;
+}
+
+.lh30{
+  line-height: 30px;
+}
+
+.left-navbar{
+  left: 0;
+  height: 100%;
+  width: 200px;
+  border-right: 1px solid #ddd;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 0 4px rgba(0,0,0,.065);
+  -moz-box-shadow: 1px 0 4px rgba(0,0,0,.065);
+  box-shadow: 1px 0 4px rgba(0,0,0,.065);
+}
+
+.left-navbar li{
+  line-height: 30px;
+}
+
+.left-navbar li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+select.s1, select.s3{
+  width: 120px;
+  outline: none;
+}
+select.s2{
+  width: 140px;
+  outline: none;
+}
+select.s4{
+  width: 100px;
+  outline: none;
+}
+
+.form-filter{
+  float: left;
+  margin: 20px;
+}
+
+.form-find{
+  float: right;
+  margin: 20px;
+}
+
+.date-input{
+  width: 80px;
+  cursor: pointer;
+}
+
+.table-center th, .table-center td{
+  text-align: center;
+  vertical-align: middle;
+}
